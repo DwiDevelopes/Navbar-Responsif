@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Web Development Meet 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<link rel = "stylesheet" href = "node_modules/animate.css/animate.css">
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(46, 42, 42);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+.Roy_wibu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.Roy_wibu div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+footer{
+
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.iwak{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 50%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    position: absolute;
+    left:62px;
+    bottom:50px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #f39c12;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover{
+
+    box-shadow: 2px 2px blueviolet;
+}
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        padding-top: 80px;
+        z-index: -1;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        margin: 1.5rem 0;
+        z-index: 1;
+    }
+
+    .Roy_wibu {
+        display: flex;
+    }
+    footer{
+        font-size: 1rem;
+        display: flexbox;
+    }
+    .iwak{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        border-radius: 50%;
+        z-index: -2;
+    }
+    button{
+        position: absolute;
+        left:62px;
+        bottom:50px;
+        box-sizing: border-box;
+        border: none;
+        background-color: #f39c12;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover{
+
+        box-shadow: 2px 2px blueviolet;
+    }
+}
+.nav-active {
+    transform: translateX(0);
+}
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+    </style>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">MyLogo</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="Roy_wibu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <audio id="audio" src="sound/wkwkwkwkwk.mp3"autoplay></audio>
+    <script>
+        function masuk() {
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+    </script>
+<div class = "iwak">
+    <img src = "saya_wibu.jpg" alt = "Iwak Logo" style="width: 100px; height: 100px; border-radius: 50%;"  class = "animate__animated animate__backInUp">
+    <button onclick="masuk()" style = "background-color: #f39c12; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 16px;" class = "animate__animated animate__backInUp"><i class="fas fa-microphone-alt"></i></button>
+    <h2 style="color:white;" class = "animate__animated animate__backInDown">Dwi Bakti N Dev</h2>
+    <div class = "padding">
+        <h3 style="color:white; padding : 2px;" class = "animate__animated animate__backInDown">Web Development</h3>
+    </div>
+</div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>MyLogo</h3>
+        </div>
+        <h1></h1>
+        <div class="footer-bottom" style="padding: 5px;">
+            &copy; Designed by Dwi Bakti Nugroho</a>
+        </div>
+    </footer>
+
+    <script>
+        const navSlide = () => {
+            const burger = document.querySelector('.Roy_wibu');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                burger.classList.toggle('toggle');
+            });
+            document.addEventListener('click', (event) => {
+                const isClickInsideNav = nav.contains(event.target) || burger.contains(event.target);
+                if (!isClickInsideNav && nav.classList.contains('nav-active')) {
+                    nav.classList.remove('nav-active');
+                    burger.classList.remove('toggle');
+                    navLinks.forEach(link => {
+                        link.style.animation = '';
+                    });
+                }
+            });
+        }
+        
+        navSlide();
+    </script>
+</body>
+</html>
